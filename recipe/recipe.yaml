@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: nnpdf
-  version: 4.0.10
+  version: "4.1.0"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://github.com/NNPDF/nnpdf/archive/${{ version }}.tar.gz
-  sha256: 307bc48d51b44ab8cf24e365d1a89bbd50f62290f9a3142eae5c55188b9cb49d
+  sha256: 8483839c74e9f0773b2a7edf535d600e211a16336cdfab8f654dc512dc288c9a
 
 build:
   number: 0
@@ -46,8 +46,8 @@ requirements:
     - requests
     - prompt_toolkit
     - validobj
-    - pineappl >=0.8.2,<1.0
-    - eko >=0.14.2,<0.15
+    - pineappl >=1.0.0
+    - eko >=0.15.1,<0.16
     - fiatlux
     - joblib
     - ruamel.yaml >=0.15
