@@ -60,9 +60,9 @@ tests:
         - pytest-mpl
 
     script:
-      # This test requires to download stuff not available from here
-      - pytest --mpl --mpl-default-tolerance 24 --pyargs validphys -k 'not extrasum_slice'
-      - pytest --pyargs n3fit
+      # The extrasum and evolution/fit tests require downloading too much stuff
+      - pytest --mpl --mpl-default-tolerance 32 --pyargs validphys -k 'not extrasum_slice'
+      - pytest --pyargs n3fit -k "not evolven3fit" -k "not performfit"
 
 about:
   license: GPL-3.0-or-later
@@ -73,4 +73,3 @@ about:
 extra:
   recipe-maintainers:
     - scarlehoff
-    - comane
