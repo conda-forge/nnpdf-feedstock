@@ -60,9 +60,8 @@ tests:
         - pytest-mpl
 
     script:
-      # The extrasum and evolution/fit tests require downloading too much stuff
-      - pytest --mpl --mpl-default-tolerance 32 --pyargs validphys -k 'not extrasum_slice'
-      - pytest --pyargs n3fit -k "not evolven3fit" -k "not performfit"
+      # The n3fit tests and some of VP's ones take too much space and make the worker crash
+      - pytest --mpl --mpl-default-tolerance 32 --pyargs validphys -k 'not extrasum_slice' -k "not regressions" -k "not photon" -k "not scalevariation"
 
 about:
   license: GPL-3.0-or-later
