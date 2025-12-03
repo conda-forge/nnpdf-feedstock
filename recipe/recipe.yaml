@@ -60,8 +60,9 @@ tests:
         - pytest-mpl
 
     script:
-      # The n3fit tests and some of VP's ones take too much space and make the worker crash
-      - pytest --mpl --mpl-default-tolerance 32 --pyargs validphys -k 'not extrasum_slice' -k "not regressions" -k "not photon" -k "not scalevariation"
+      # Limit the test to the datafiles, downloading resources kills the automatic worker.
+      # Conda recipe is tested in the official repository https://github.com/NNPDF/nnpdf
+      - pytest --pyargs validphys -k "datafiles"
 
 about:
   license: GPL-3.0-or-later
