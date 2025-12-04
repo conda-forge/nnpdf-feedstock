@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: nnpdf
-  version: "4.1.1"
+  version: "4.1.2"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://github.com/NNPDF/nnpdf/archive/${{ version }}.tar.gz
-  sha256: fd79a09961f77cec1f2edca0e4172e64e4abd2753d6f57ee59789b4f6c97abc2
+  sha256: 410601b32a0184c50342adf89e8bc47a88d74a996d3d051a913a5ee3628e4f5a
 
 build:
   number: 0
@@ -60,9 +60,9 @@ tests:
         - pytest-mpl
 
     script:
-      # This test requires to download stuff not available from here
-      - pytest --mpl --mpl-default-tolerance 24 --pyargs validphys -k 'not extrasum_slice'
-      - pytest --pyargs n3fit
+      # Limit the test to the datafiles, downloading resources kills the automatic worker.
+      # Conda recipe is tested in the official repository https://github.com/NNPDF/nnpdf
+      - pytest --pyargs validphys -k "datafiles"
 
 about:
   license: GPL-3.0-or-later
@@ -73,4 +73,3 @@ about:
 extra:
   recipe-maintainers:
     - scarlehoff
-    - comane
