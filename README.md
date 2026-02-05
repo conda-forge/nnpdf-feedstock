@@ -143,6 +143,5 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
-* [@comane](https://github.com/comane/)
 * [@scarlehoff](https://github.com/scarlehoff/)
 
