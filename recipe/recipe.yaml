@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: nnpdf
-  version: "4.1.4"
+  version: "4.1.5"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://github.com/NNPDF/nnpdf/archive/${{ version }}.tar.gz
-  sha256: f5f92db000f0d2caa636a1e27a4642752c9a30a37cdcee2e3c0572b3df5f3a91
+  sha256: c3eac8df1b717f53ba269f91abeb5f2c82f99a24e05de37bd9185bc4831a7ff9
 
 build:
   number: 0
